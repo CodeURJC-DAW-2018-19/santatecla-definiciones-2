@@ -14,6 +14,7 @@
 <a href="https://docs.google.com/document/d/1dTLoca-8kaenswDGI5e6cehQsd5j04QZiH79iQfrNvA/edit?usp=sharing">Click here to view.</a>
 
 <h3 id="screenshots">Screenshots:</h3>
+
 ![alt text](https://i.imgur.com/8CXSSNr.png)
 <p>This is the landing page, where you can see all the topics and their respective concepts.
     You can also search for a concept in the search bar.</p>
