@@ -16,6 +16,7 @@
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="assets/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/login.css" />
 
 </head>
 
@@ -63,7 +64,6 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <img src="./assets/img/Inicio.png" style="width:300px"></img>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -81,172 +81,30 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div style="margin-left: 20px"class="input-group">
-              <input type="text" class="form-control" placeholder="Buscar...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Buscar</button>
-              </span>
-            </div>
-            <!-- /Buscar -->
-          </div>
-        </br>
-          <div class="row">
-            <div class="card">
-              <div class="card-header card-header-tabs card-header-primary">
-                <div class="nav-tabs-navigation">
-                  <div class="nav-tabs-wrapper">
-                    <span class="nav-tabs-title"></span>
-                    <ul class="nav nav-tabs" data-tabs="tabs">
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#profile" data-toggle="tab">
-                          <i class="material-icons">bookmark</i> ESTRUCTURAS DE DATOS
-                          <div class="ripple-container"></div>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#messages" data-toggle="tab">
-                          <i class="material-icons">bookmark</i> SISTEMAS OPERATIVOS
-                          <div class="ripple-container"></div>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#settings" data-toggle="tab">
-                          <i class="material-icons">bookmark</i> REDES DE COMPUTADORES
-                          <div class="ripple-container"></div>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+            <div class="wrapper fadeInDown">
+                <div id="formContent">
+                
+                    <!-- Icon -->
+                    <div class="fadeIn first">
+                        <img src="./assets/img/login_user.png" id="icon" alt="User Icon" />
+                    </div
+                
+                    <!-- Login Form -->
+                    <form>
+                        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+                        <input type="text" id="password" class="fadeIn third" name="login" placeholder="contraseña">
+                        <input type="submit" class="fadeIn fourth" value="Log In">
+                    </form>
+                
+                    <!-- Remind Passowrd -->
+                    <div id="formFooter">
+                        <a class="underlineHover" href="#">¿Olvidaste la contraseña?</a>
+                    </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="tab-content">
-                  <div class="tab-pane active" id="profile">
-                    <table class="table">
-                      <tbody><button class="btn btn-danger" type="button">
-                          <i class="material-icons">delete_forever</i>  ELIMINAR TEMA</button>
-                          <div class="card">
-                            <div class="card-header">
-                              <a class="card-link" data-toggle="collapse" href="#" >
-                                PUNTERO
-                              </a>
-                              <button style="float:right;" class="btn btn-link" type="button">
-                              <i class="material-icons">delete_forever</i></button>
-                            </div>
-                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                            </div>
-                          </div>
-                          <div class="card">
-                              <div class="card-header">
-                                <a class="card-link" data-toggle="collapse" href="#" >
-                                  LISTA
-                                </a>
-                                <button style="float:right;" class="btn btn-link" type="button">
-                                <i class="material-icons">delete_forever</i></button>
-                              </div>
-                              <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                              </div>
-                          </div>
-                          <div class="card">
-                            <div class="card-header">
-                              <a class="card-link" data-toggle="collapse" href="#" >
-                                GRAFO
-                              </a>
-                              <button style="float:right;" class="btn btn-link" type="button">
-                                <i class="material-icons">delete_forever</i></button>
-                            </div>
-                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                            </div>
-                          </div>
-                          <button class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                          <i class="material-icons">add_circle_outline</i>AÑADIR CONCEPTO</button>        
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="tab-pane" id="messages">
-                    <table class="table">
-                      <tbody>
-                        <button class="btn btn-danger" type="button">
-                        <i class="material-icons">delete_forever</i>  ELIMINAR TEMA</button>
-                        <div class="card">
-                          <div class="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#" >
-                              INTERRUPCIÓN
-                            </a>
-                            <button style="float:right;" class="btn btn-link" type="button">
-                            <i class="material-icons">delete_forever</i></button>
-                          </div>
-                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                          </div>
-                        </div>
-                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                        <i class="material-icons">add_circle_outline</i>  AÑADIR CONCEPTO</button>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="tab-pane" id="settings">
-                    <table class="table">
-                      <tbody>
-                        <button class="btn btn-danger" type="button">
-                        <i class="material-icons">delete_forever</i>  ELIMINAR TEMA</button>
-                        <div class="card">
-                          <div class="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#" >
-                              TCP
-                            </a>
-                            <button style="float:right;" class="btn btn-link" type="button">
-                            <i class="material-icons">delete_forever</i></button>
-                          </div>
-                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                          </div>
-                        </div>
-                        <div class="card">
-                          <div class="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#" >
-                              UDP
-                            </a>
-                            <button style="float:right;" class="btn btn-link" type="button">
-                            <i class="material-icons">delete_forever</i></button>
-                          </div>
-                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                          </div>
-                        </div>
-                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                        <i class="material-icons">add_circle_outline</i>  AÑADIR CONCEPTO</button>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>           
-        </div>
-        <div class="row">
-            <button class="btn btn-primary"><i class="material-icons">bar_chart</i> Diagrama</button>
-        </div></br></br>
-      </div>
-
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">TEMA / CONCEPTO</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <div class="modal-body">
-              NOMBRE: 
-              <input type="text" name="concepto1">
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Aceptar</button>
-            </div>
-          </div>
         </div>
-
-      <footer class="footer">
-  <!--   Core JS Files   -->
+    </div>
+    <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap-material-design.min.js"></script>
@@ -468,5 +326,4 @@
     });
   </script>
 </body>
-
 </html>
