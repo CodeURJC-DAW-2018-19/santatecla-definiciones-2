@@ -1,0 +1,33 @@
+{{>header}}
+		
+
+
+{{#book}}
+
+                        <div class="card">
+                          <div class="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#">
+                              Book "{{book.title}}"
+                            </a>
+                            <button style="float:right;" class="btn btn-link" type="button">
+                              <i class="material-icons">delete_forever</i></button>
+                          </div>
+                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                          </div>
+                        </div>
+
+  {{#admin}}
+  <p><a href="/deleteBook/{{book.id}}">Remove</a></p>
+  <p><a href="/editBook/{{book.id}}">Edit</a></p>
+  <br>
+  {{/admin}}
+{{/book}}
+
+{{^book}}
+<p>Book not found</p>
+{{/book}}
+
+	
+
+
+{{>footer}}
