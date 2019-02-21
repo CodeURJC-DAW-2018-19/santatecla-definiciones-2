@@ -33,6 +33,8 @@
               <p>Inicio</p>
             </a>
           </li>
+         
+           {{^logged}}
           <li class="nav-item active-pro">
             <a class="nav-link" href="/login" id="navbarDropdownProfile" aria-haspopup="true" aria-expanded="false">
               <i class="material-icons">person</i>
@@ -41,6 +43,19 @@
               </p>
             </a>
           </li>
+           {{/logged}}
+           
+          {{#logged}}
+          <li class="nav-item active-pro"><form action="/logout" method="post">
+								
+            <a class="nav-link" id="navbarDropdownProfile" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-default navbar-btn" type="submit"> {{userName}} LOGOUT</button>
+								<input type="hidden" name="_csrf" value="{{token}}" />
+            </a>
+            </form>
+          </li>
+           {{/logged}}
+           
         </ul>
       </div>
     </div>

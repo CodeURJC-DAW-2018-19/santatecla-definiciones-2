@@ -24,7 +24,7 @@ public class DatabaseInitializer {
 
 		// Sample books
 
-		bookRepository.save(new Book("SUEÑOS DE ACERO Y NEON",
+		bookRepository.save(new Book("CONCEPTO DE EJEMPLO UNO",
 				"Los personajes que protagonizan este relato sobreviven en una sociedad en decadencia a la que, no obstante, lograrán devolver la posibilidad de un futuro. Año 2484. En un mundo dominado por las grandes corporaciones, solo un hombre, Jordi Thompson, detective privado deslenguado y vividor, pero de gran talento y sentido d..."));
 		bookRepository.save(new Book("LA VIDA SECRETA DE LA MENTE",
 				"La vida secreta de la mentees un viaje especular que recorre el cerebro y el pensamiento: se trata de descubrir nuestra mente para entendernos hasta en los más pequeños rincones que componen lo que somos, cómo forjamos las ideas en los primeros días de vida, cómo damos forma a las decisiones que nos constituyen, cómo soñamos y cómo imaginamos, por qué sentimos ciertas emociones hacia los demás, cómo los demás influyen en nosotros, y cómo el cerebro se transforma y, con él, lo que somos."));
