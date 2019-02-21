@@ -25,14 +25,14 @@
                   <div class="nav-tabs-wrapper">
                     <span class="nav-tabs-title"></span>
                     <ul class="nav nav-tabs" data-tabs="tabs">
-                    {{#unit}}
+                    {{#units}}
                       <li class="nav-item">
                         <a class="nav-link active" href="#profile" data-toggle="tab">
                           <i class="material-icons">bookmark</i> {{title}}
                           <div class="ripple-container"></div>
                         </a>
                       </li>
-                      {{/unit}}
+                      {{/units}}
                     </ul>
                   </div>
                 </div>
@@ -58,7 +58,7 @@
                               <a href="/concepts/{{id}}">{{title}}</a>
                                {{/admin}}
                               {{#admin}}
-                              <a href="/editBook/{{id}}">{{title}}</a>
+                              <a href="/editConcept/{{id}}">{{title}}</a>
                               {{/admin}}
                             </a>
                             {{#admin}}
