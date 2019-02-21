@@ -6,23 +6,50 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+<<<<<<< HEAD
+=======
+			<name>org.eclipse.wst.common.project.facet.core.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+>>>>>>> 9dbb30e42ee4a88281439e7ce120683eb6043e47
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< HEAD
+=======
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+>>>>>>> 9dbb30e42ee4a88281439e7ce120683eb6043e47
 			<name>org.springframework.ide.eclipse.boot.validation.springbootbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< HEAD
 			<name>org.eclipse.m2e.core.maven2Builder</name>
+=======
+			<name>org.springframework.ide.eclipse.core.springbuilder</name>
+>>>>>>> 9dbb30e42ee4a88281439e7ce120683eb6043e47
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
+<<<<<<< HEAD
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+=======
+		<nature>org.springframework.ide.eclipse.core.springnature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+>>>>>>> 9dbb30e42ee4a88281439e7ce120683eb6043e47
 	</natures>
 </projectDescription>
