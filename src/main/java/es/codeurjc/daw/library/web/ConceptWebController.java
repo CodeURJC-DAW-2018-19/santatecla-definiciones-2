@@ -9,16 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import es.codeurjc.daw.library.book.Book;
-import es.codeurjc.daw.library.book.BookService;
+import es.codeurjc.daw.library.concept.*;
 import es.codeurjc.daw.library.user.UserComponent;
 
 @Controller
-public class BookWebController {
+public class ConceptWebController {
 
 	@Autowired
-	private BookService service;
+	private ConceptService service;
 	
 	@Autowired
 	private UserComponent userComponent;
@@ -33,57 +31,59 @@ public class BookWebController {
 		}
 	}
 	
-	@GetMapping("/")
-	public String showBooks(Model model) {
 
-		model.addAttribute("books", service.findAll());
 	
-		return "books";
+	@GetMapping("/")
+	public String showConcepts(Model model) {
+
+		model.addAttribute("concepts", service.findAll());
+	
+		return "concept";
 	}
 	
-	@GetMapping("/books/{id}")
+	@GetMapping("/concept/{id}")
 	public String showBook(Model model, @PathVariable long id) {
 		
-		Optional<Book> book = service.findOne(id);
+		Optional<ConceptUnit> unit = service.findOne(id);
 
-		if(book.isPresent()) {
-			model.addAttribute("book", book.get());
+		if(unit.isPresent()) {
+			model.addAttribute("concepts", unit.get());
 		}
 
-		return "book";
+		return "concepts";
 	}
 	
-	@GetMapping("/newBook")
+	@GetMapping("/newConcept")
 	public String newBook(Model model) {
-		return "bookForm";
+		return "conceptForm";
 	}
 	
-	@GetMapping("/editBook/{id}")
+	@GetMapping("/editConcept/{id}")
 	public String newBook(Model model, @PathVariable long id) {
 		
-		Optional<Book> book = service.findOne(id);
+		Optional<ConceptUnit> unit = service.findOne(id);
 		
-		if(book.isPresent()) {
-			model.addAttribute("book", book.get());
+		if(unit.isPresent()) {
+			model.addAttribute("concept", unit.get());
 		}
 		
-		return "bookForm";
+		return "conceptForm";
 	}
 	
-	@PostMapping("/saveBook")
-	public String saveBook(Model model, Book book) {
+	@PostMapping("/saveConcept")
+	public String saveBook(Model model, ConceptUnit unit) {
 		
-		service.save(book);
+		service.save(unit);
 		
-		return "bookCreated";
+		return "conceptCreated";
 	}
 	
-	@GetMapping("/deleteBook/{id}")
+	@GetMapping("/deleteConcept/{id}")
 	public String deleteBook(Model model, @PathVariable long id) {
 		
 		service.delete(id);
 		
-		return "bookDeleted";
+		return "conceptDeleted";
 	}
 	
 	@GetMapping("/login")
@@ -95,5 +95,11 @@ public class BookWebController {
 	@GetMapping("/loginerror")
 	public String loginError() {
 		return "loginerror";
+	}
+	
+	
+	@GetMapping("/error")
+	public String Error() {
+		return "error";
 	}
 }

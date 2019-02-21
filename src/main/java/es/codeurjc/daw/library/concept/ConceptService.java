@@ -1,4 +1,4 @@
-package es.codeurjc.daw.library.book;
+package es.codeurjc.daw.library.concept;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,21 +9,21 @@ import org.springframework.stereotype.Service;
 /* This service will be used to include features to controller(s)
  */
 @Service
-public class BookService {
+public class ConceptService {
 
 	@Autowired
-	private BookRepository repository;
+	private UnitRepository repository;
 
-	public Optional<Book> findOne(long id) {
+	public Optional<ConceptUnit> findOne(long id) {
 		return repository.findById(id);
 	}
 
-	public List<Book> findAll() {
+	public List<ConceptUnit> findAll() {
 		return repository.findAll();
 	}
 
-	public void save(Book book) {
-		repository.save(book);
+	public void save(ConceptUnit  unit) {
+		repository.save(unit);
 	}
 
 	public void delete(long id) {
