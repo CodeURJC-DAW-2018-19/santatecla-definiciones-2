@@ -44,7 +44,7 @@ public class ConceptWebController {
 	@GetMapping("/concept/{id}")
 	public String showBook(Model model, @PathVariable long id) {
 		
-		Optional<ConceptUnit> unit = service.findOne(id);
+		Optional<Concept> unit = service.findOne(id);
 
 		if(unit.isPresent()) {
 			model.addAttribute("concepts", unit.get());
@@ -61,7 +61,7 @@ public class ConceptWebController {
 	@GetMapping("/editConcept/{id}")
 	public String newBook(Model model, @PathVariable long id) {
 		
-		Optional<ConceptUnit> unit = service.findOne(id);
+		Optional<Concept> unit = service.findOne(id);
 		
 		if(unit.isPresent()) {
 			model.addAttribute("concept", unit.get());
@@ -71,9 +71,9 @@ public class ConceptWebController {
 	}
 	
 	@PostMapping("/saveConcept")
-	public String saveBook(Model model, ConceptUnit unit) {
+	public String saveBook(Model model, Concept concept) {
 		
-		service.save(unit);
+		service.save(concept);
 		
 		return "conceptCreated";
 	}

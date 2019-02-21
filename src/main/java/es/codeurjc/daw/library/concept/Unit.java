@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 //import org.hibernate.annotations.CascadeType;
 
 @Entity
-public class ConceptUnit {
+public class Unit {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
@@ -26,14 +26,14 @@ public class ConceptUnit {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Concept> concepts = new ArrayList<>();
 	
-	public ConceptUnit() {}
+	public Unit() {}
 	
-	public ConceptUnit(String title) {
+	public Unit(String title) {
 		super();
 		this.title = title;
 	}
 	
-	public ConceptUnit(String title, Concept c ) {
+	public Unit(String title, Concept c ) {
 		super();
 		this.title = title;
 		this.concepts.add(c);
