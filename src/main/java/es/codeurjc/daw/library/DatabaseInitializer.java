@@ -35,11 +35,13 @@ public class DatabaseInitializer {
 		
 		// Sample units
 		Unit u1 = new Unit("Unidad 1", c1);
+		Unit u2 = new Unit("Unidad 2", c2);
 		
 		//u1.getConcepts().add(c2);
 
 		
 		unitRepository.save(u1);
+		unitRepository.save(u2);
 
 		
 		
@@ -47,6 +49,7 @@ public class DatabaseInitializer {
 		// Sample users
 
 		userRepository.save(new User("user", "pass", "ROLE_USER"));
+		userRepository.save(new User("user2", "pass", "ROLE_USER"));
 		userRepository.save(new User("admin", "pass", "ROLE_USER", "ROLE_ADMIN"));
 	}
 

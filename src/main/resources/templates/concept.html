@@ -1,147 +1,142 @@
 {{>header}}
-
-<div class="content">
+		<div class="content">
 <div class="container-fluid">
+{{#concept}}
+
+                        <div class="card">
+                          <div class="card-header">
+                            <h5>
+                              Concepto: "{{concept.title}}"
+                            </h5>
+                          </div>
+                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                          </div>
+                        </div>
+{{/concept}}
           <div class="row">
-            <!-- /Buscar -->
-            <div style="justify-content:left" class="input-group">
-              <span class="input-group-btn">
-                <button class="btn btn-primary search-btn"><i class="fa fa-search"></i></button>
-              </span>
-              <input type="text" class="form-control ds-input" placeholder="Buscar...">
-            </div>
-            </div>
-          </br>
-          <div class="row" style="margin-left: 5px; justify-content:left">
-         {{#admin}}
-                      <button class="btn btn-success" data-toggle="modal" data-target="#newConcept" style="float: right" type="button">
-                 AÑADIR TEMA</button>
-                  {{/admin}}
-                  </div></br>
-          <div class="row">
+             <div class="col">
             <div class="card">
-              <div class="card-header card-header-tabs card-header-primary">
-                <div class="nav-tabs-navigation">
-                  <div class="nav-tabs-wrapper">
-                    <span class="nav-tabs-title"></span>
-                    <ul class="nav nav-tabs" data-tabs="tabs">
-                    {{#units}}
-                      <li class="nav-item">
-                        <a class="nav-link active" href="#profile" data-toggle="tab">
-                          <i class="material-icons">bookmark</i> {{title}}
-                          <div class="ripple-container"></div>
-                        </a>
-                      </li>
-                      {{/units}}
-                    </ul>
-                  </div>
-                </div>
-                
+              <div class="card-header card-header-primary">
+                <h4 class="card-title ">Preguntas Corregidas</h4>
               </div>
               <div class="card-body">
-                <div class="tab-content">
-                  <div class="tab-pane active" id="profile">
-                    <table class="table">
-                      <tbody>
-                      {{#admin}}
-                      <button class="btn btn-danger" type="button">
-                          <i class="material-icons">delete_forever</i>ELIMINAR TEMA</button>
-                        {{/admin}}
-                        {{#concepts}}
-                        
-					
-        			 {{#logged}}
-        			<div class="card">
-                          <div class="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#">
-                             {{^admin}}
-                              <a href="/concepts/{{id}}">{{title}}</a>
-                               {{/admin}}
-                              {{#admin}}
-                              <a href="/editConcept/{{id}}">{{title}}</a>
-                              {{/admin}}
-                            </a>
-                            {{#admin}}
-                            <a style="float:right;" href="/deleteBook/{{id}}" class="btn btn-primary" role="button">
-                           <i class="material-icons">delete_forever</i></a>
-                              {{/admin}}
-                          </div>
-                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                          </div>
-                        </div>
-					{{/logged}}
-					{{^logged}}
-					
-        			<div class="card">
-                          <div class="card-header">
-                            <a class="card-link" data-toggle="collapse" href="#">
-                              {{title}}
-                            </a>
-                          </div>
-                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                          </div>
-                        </div>
-					{{/logged}}
-					
-					{{/concepts}}
-					{{#admin}}
-					<!-- Button trigger modal -->
-                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#newConcept">
-                           AÑADIR CONCEPTO</button>
-                        
-<!-- Modal -->
-<div class="modal fade" id="newConcept" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-      {{^book}}<h5 class="modal-title" id="exampleModalLabel">Nuevo Concepto</h5>{{/book}}
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th>
+                        Nº
+                      </th>
+                      <th>
+                        Pregunta
+                      </th>
+                      <th>
+                        Tipo
+                      </th>
+                      <th>
+                        Correción
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          1
+                        </td>
+                        <td>
+                          ¿Por qué no es correcto afirmar que <concepto> es <respuesta incorrecta>?
+                        </td>
+                        <td>
+                          Respuesta/Justificación Abierta 1.
+                        </td>
+                        <td>
+                          <i class="material-icons">check_circle</i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          
+          <div class="row">
+ <div class="col">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title ">Preguntas Por Corregir</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th>
+                        Nº
+                      </th>
+                      <th>
+                        Pregunta
+                      </th>
+                      <th>
+                        Tipo
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          1
+                        </td>
+                        <td>
+                          ¿Por qué no es correcto afirmar que <concepto> es <respuesta incorrecta>?
+                        </td>
+                        <td>
+                          Respuesta/Justificación Abierta 1.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
 
-{{#book}}<h2>Book "{{book.title}}"</h2>{{/book}}
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-success" type="button" data-toggle="modal" data-target="#AddQuestionModal">
+                <i class="material-icons">add_circle_outline</i> AÑADIR PREGUNTA</button>
+            </div>
+          </div>
 
-<form action="/saveBook" method="post">
-	<div class="form-group">
-		{{#book}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/book}}
-		<label for="title">Concepto</label></br>
-		<input type="text" id="title" name="title" 
-			{{#book}}value="{{title}}"{{/book}} class="form-control"/>
-	</div>
-	<div class="form-group">
-		<label for="description">Descripción</label></br>
-		<textarea id="description" name="description" class="form-control" rows=6>
-			{{#book}}{{description}}{{/book}}
-		</textarea>
-		<br>
-	</div>	
-	<button type="submit" class="btn btn-primary">Guardar</button>
-	<input type="hidden" name="_csrf" value="{{token}}"/>
-</form>
-
-</div>	
-      </div>
-    </div>
-  </div>
-</div>
-                      {{/admin}}
-                      </tbody>
-                    </table>
+          <!-- Question Modals -->
+          <div class="modal fade" id="AddQuestionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">PREGUNTA</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="radio">
+                    <label><input type="radio" name="optradio" checked>Respuesta Correcta</label>
                   </div>
+                  <div class="radio">
+                    <label><input type="radio" name="optradio">Respuesta Incorrecta</label>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Aceptar</button>
                 </div>
               </div>
             </div>
           </div>
-          {{#logged}}
-          <div class="row">
-            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#DiagramModal">
-              <i class="material-icons">bar_chart</i> Diagrama</button>
-          </div>
-          {{/logged}}
-        </div>
+
+
+{{^concept}}
+<p>concept not found</p>
+{{/concept}}
+
+	</div>
 </div>
 
 {{>footer}}

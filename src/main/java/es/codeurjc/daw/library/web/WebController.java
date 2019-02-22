@@ -42,7 +42,7 @@ public class WebController {
 		model.addAttribute("units", unitService.findAll());
 		model.addAttribute("concepts", service.findAll());
 	
-		return "concept";
+		return "concepts";
 	}
 	
 	@GetMapping("/concept/{id}")
@@ -54,7 +54,7 @@ public class WebController {
 			model.addAttribute("concepts", unit.get());
 		}
 
-		return "concepts";
+		return "concept";
 	}
 	
 	@GetMapping("/newConcept")

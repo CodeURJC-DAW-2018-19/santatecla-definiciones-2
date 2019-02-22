@@ -1,0 +1,147 @@
+{{>header}}
+
+<div class="content">
+<div class="container-fluid">
+          <div class="row">
+            <!-- /Buscar -->
+            <div style="justify-content:left" class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-primary search-btn"><i class="fa fa-search"></i></button>
+              </span>
+              <input type="text" class="form-control ds-input" placeholder="Buscar...">
+            </div>
+            </div>
+          </br>
+          <div class="row" style="margin-left: 5px; justify-content:left">
+         {{#admin}}
+                      <button class="btn btn-success" data-toggle="modal" data-target="#newConcept" style="float: right" type="button">
+                 AÑADIR TEMA</button>
+                  {{/admin}}
+                  </div></br>
+          <div class="row">
+            <div class="card">
+              <div class="card-header card-header-tabs card-header-primary">
+                <div class="nav-tabs-navigation">
+                  <div class="nav-tabs-wrapper">
+                    <span class="nav-tabs-title"></span>
+                    <ul class="nav nav-tabs" data-tabs="tabs">
+                    {{#units}}
+                      <li class="nav-item">
+                        <a class="nav-link" href="#profile" data-toggle="tab">
+                          <i class="material-icons">bookmark</i> {{title}}
+                          <div class="ripple-container"></div>
+                        </a>
+                      </li>
+                      {{/units}}
+                    </ul>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="profile">
+                    <table class="table">
+                      <tbody>
+                      {{#admin}}
+                      <button class="btn btn-danger" type="button">
+                          <i class="material-icons">delete_forever</i>ELIMINAR TEMA</button>
+                        {{/admin}}
+                        {{#concepts}}
+                        
+					
+        			 {{#logged}}
+        			<div class="card">
+                          <div class="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#">
+                             {{^admin}}
+                              <a href="/concept/{{id}}">{{title}}</a>
+                               {{/admin}}
+                              {{#admin}}
+                              <a href="/editConcept/{{id}}">{{title}}</a>
+                              {{/admin}}
+                            </a>
+                            {{#admin}}
+                            <a style="float:right;" href="/deleteConcept/{{id}}" class="btn btn-primary" role="button">
+                           <i class="material-icons">delete_forever</i></a>
+                              {{/admin}}
+                          </div>
+                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                          </div>
+                        </div>
+					{{/logged}}
+					{{^logged}}
+					
+        			<div class="card">
+                          <div class="card-header">
+                            <a class="card-link" data-toggle="collapse">
+                              {{title}}
+                            </a>
+                          </div>
+                          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                          </div>
+                        </div>
+					{{/logged}}
+					
+					{{/concepts}}
+					{{#admin}}
+					<!-- Button trigger modal -->
+                        <button class="btn btn-success" type="button" data-toggle="modal" data-target="#newConcept">
+                           AÑADIR CONCEPTO</button>
+                        
+<!-- Modal -->
+<div class="modal fade" id="newConcept" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      {{^book}}<h5 class="modal-title" id="exampleModalLabel">Nuevo Concepto</h5>{{/book}}
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+
+{{#concept}}<h2>Concepto "{{concept.title}}"</h2>{{/concept}}
+
+<form action="/saveConcept" method="post">
+	<div class="form-group">
+		{{#concept}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/concept}}
+		<label for="title">Concepto</label></br>
+		<input type="text" id="title" name="title" 
+			{{#book}}value="{{title}}"{{/book}} class="form-control"/>
+	</div>
+	<div class="form-group">
+		<label for="description">Descripción</label></br>
+		<textarea id="description" name="description" class="form-control" rows=6>
+			{{#concept}}{{description}}{{/concept}}
+		</textarea>
+		<br>
+	</div>	
+	<button type="submit" class="btn btn-primary">Guardar</button>
+	<input type="hidden" name="_csrf" value="{{token}}"/>
+</form>
+
+</div>	
+      </div>
+    </div>
+  </div>
+</div>
+                      {{/admin}}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{#logged}}
+          <div class="row">
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#DiagramModal">
+              <i class="material-icons">bar_chart</i> Diagrama</button>
+          </div>
+          {{/logged}}
+        </div>
+</div>
+
+{{>footer}}
