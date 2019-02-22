@@ -8,9 +8,11 @@
   <title>
     Gestor de Definiciones
   </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
@@ -21,7 +23,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="azure" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="azure" data-background-color="white" data-image="/img/sidebar-1.jpg">
       <div class="logo">
         <img src="/img/Definiciones.png" style="width:260px"></img>
       </div>
@@ -33,7 +35,7 @@
               <p>Inicio</p>
             </a>
           </li>
-           {{^logged}}
+          {{^logged}}
           <li class="nav-item active-pro">
             <a class="nav-link" href="/login" id="navbarDropdownProfile" aria-haspopup="true" aria-expanded="false">
               <i class="material-icons">person</i>
@@ -42,22 +44,23 @@
               </p>
             </a>
           </li>
-           {{/logged}}
-           
+          {{/logged}}
+
           {{#logged}}
-          <li class="nav-item active-pro"><form action="/logout" method="post">
-								
-            <a class="nav-link" id="navbarDropdownProfile" aria-haspopup="true" aria-expanded="false">
-              <button class="btn btn-default navbar-btn" type="submit"> {{userName}} LOGOUT</button>
-								<input type="hidden" name="_csrf" value="{{token}}" />
-            </a>
+          <li class="nav-item active-pro">
+            <form action="/logout" method="post">
+
+              <a class="nav-link" id="navbarDropdownProfile" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-default navbar-btn" type="submit"> {{userName}} LOGOUT</button>
+                <input type="hidden" name="_csrf" value="{{token}}" />
+              </a>
             </form>
           </li>
-           {{/logged}}
+          {{/logged}}
         </ul>
       </div>
     </div>
-    
+
     <div class="main-panel" style="background-image: url(/img/cover.jpg); background-repeat: no-repeat">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">

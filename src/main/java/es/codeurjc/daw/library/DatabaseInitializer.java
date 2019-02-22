@@ -26,11 +26,12 @@ public class DatabaseInitializer {
 		
 		// Sample concepts
 		
-		Concept c1 = new Concept("Concepto 1 dos tres cuatro");
+		Concept c1 = new Concept("Concepto 1");
 		Concept c2 = new Concept("Concepto 2");
-		
+		Concept c3 = new Concept("Concepto 3");
 		conceptRepository.save(c1);
 		conceptRepository.save(c2);
+		conceptRepository.save(c3);
 
 		
 		// Sample units
