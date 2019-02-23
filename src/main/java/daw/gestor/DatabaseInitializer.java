@@ -24,26 +24,21 @@ public class DatabaseInitializer {
 	@PostConstruct
 	public void init() {
 		
-		// Sample concepts
-		
-		Concept c1 = new Concept("Concepto 1");
-		Concept c2 = new Concept("Concepto 2");
-		Concept c3 = new Concept("Concepto 3");
-		conceptRepository.save(c1);
-		conceptRepository.save(c2);
-		conceptRepository.save(c3);
-
-		
 		// Sample units
-		Unit u1 = new Unit("Unidad 1", c1);
-		Unit u2 = new Unit("Unidad 2", c2);
-		
-		//u1.getConcepts().add(c2);
-
-		
+		Unit u1 = new Unit("Unidad 1");
+		Unit u2 = new Unit("Unidad 2");
 		unitRepository.save(u1);
 		unitRepository.save(u2);
 
+		//Sample concepts
+		Concept c1 = new Concept("Concepto 1");
+		Concept c2 = new Concept("Concepto 2");
+		
+		c1.SetUnit(u1);
+		c2.SetUnit(u2);
+		
+		conceptRepository.save(c1);
+		conceptRepository.save(c2);
 		
 		
 	

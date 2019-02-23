@@ -76,9 +76,9 @@ public class WebController {
 	}
 	
 	@PostMapping("/saveConcept")
-	public String saveConcept(Model model, Concept concept) {
+	public String saveConcept(Model model, Concept concept, Unit unit) {
 		
-		service.save(concept);
+		service.save(concept, unit);
 		
 		return "conceptCreated";
 	}
@@ -116,7 +116,7 @@ public class WebController {
 	}
 	
 	@GetMapping("/editUnit/{id}")
-	public String newUnitk(Model model, @PathVariable long id) {
+	public String newUnit(Model model, @PathVariable long id) {
 		
 		Optional<Unit> unit = unitService.findOne(id);
 		

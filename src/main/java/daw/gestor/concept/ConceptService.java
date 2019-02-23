@@ -22,7 +22,8 @@ public class ConceptService {
 		return repository.findAll();
 	}
 
-	public void save(Concept  concept) {
+	public void save(Concept  concept, Unit unit) {
+		concept.SetUnit(unit);
 		repository.save(concept);
 	}
 

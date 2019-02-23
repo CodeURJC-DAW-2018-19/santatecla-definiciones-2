@@ -99,7 +99,7 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          {{^concept}}<h5 class="modal-title" id="exampleModalLabel">Nuevo Concepto</h5>{{/concept}}
+                          <h5 class="modal-title" id="exampleModalLabel">Nuevo Concepto</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -111,15 +111,11 @@
 
                             <form action="/saveConcept" method="post">
                               <div class="form-group">
-                                {{#concept}}<input type="hidden" name="id" value="{{id}}"
-                                  class="form-control" />{{/concept}}
+                                {{#concept}}<input type="hidden" name="id" value="{{id}}" class="form-control" />{{/concept}}
                                 <label for="title">Concepto</label></br>
                                 <input type="text" id="title" name="title" {{#concept}}value="{{title}}" {{/concept}}
                                   class="form-control" />
                               </div>
-                              <label for="title">Numero de unidad al que pertenece</label></br>
-                              <input type="text" id="id" name="id" {{#unit}}value="{{concepts}}" {{/unit}}
-                                class="form-control" />
                               <button type="submit" class="btn btn-primary">Guardar</button>
                               <input type="hidden" name="_csrf" value="{{token}}" />
                             </form>

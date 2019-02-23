@@ -3,7 +3,6 @@ package daw.gestor.concept;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +22,7 @@ public class Unit {
 	
 	String title;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="unit")
 	private List<Concept> concepts = new ArrayList<>();
 	
 	public Unit() {}
@@ -31,12 +30,6 @@ public class Unit {
 	public Unit(String title) {
 		super();
 		this.title = title;
-	}
-	
-	public Unit(String title, Concept c ) {
-		super();
-		this.title = title;
-		this.concepts.add(c);
 	}
 	
 	public long getId() {
