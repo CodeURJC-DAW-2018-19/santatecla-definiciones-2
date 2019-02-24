@@ -203,7 +203,7 @@ public class WebController {
 			
 			model.addAttribute("error", "The file is empty");
 
-			return "uploaded";
+			return "error";
 		}
 	}
 
