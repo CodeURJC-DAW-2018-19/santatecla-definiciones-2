@@ -26,7 +26,7 @@
 
 <h1 id="documnent">Fase 2:</h1>
 
-!([Imgur](https://i.imgur.com/1Ldsgzh.png))
+![alt text](https://i.imgur.com/1Ldsgzh.png)
 
 <p>
 In order to start and run our web application, we must install Spring Tools Suite to be able to program the application. When we create a new Spring project, we must activate the Web, Mustache, JPA and MySQL, and Security dependencies. We can also activate the devtools to update our project instantly.
