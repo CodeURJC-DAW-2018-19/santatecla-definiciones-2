@@ -24,5 +24,13 @@
 <p>This is a concept page viewed from the student perspective, where you can see all the corrected questions and the ones which are not corrected yet.</p>
 
 
-<h3 id="documnent">Fase 2:</h3>
+<h1 id="documnent">Fase 2:</h1>
+
+!([Imgur](https://i.imgur.com/1Ldsgzh.png))
+
+<p>
+In order to start and run our web application, we must install Spring Tools Suite to be able to program the application. When we create a new Spring project, we must activate the Web, Mustache, JPA and MySQL, and Security dependencies. We can also activate the devtools to update our project instantly.
+
+All this would not be possible without downloading a Server to host our website and the database. To do this, we have downloaded MySQL Server and MySQL Workbench (visual tool for design and administration of databases).
+</p>
 
