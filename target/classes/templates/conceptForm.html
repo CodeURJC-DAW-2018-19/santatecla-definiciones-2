@@ -25,7 +25,7 @@
         <div class="card">
             <div class="card-header card-header-primary">
                 <h4 class="card-title ">
-                    "{{concept.title}}" Imagenes
+                    "{{concept.title}}" Imágenes
                 </h4>
             </div>
             <div id="collapseOne" class="collapse show" data-parent="#accordion">
@@ -33,13 +33,11 @@
             <div class="card-body">
             	<form action="/image/upload" method="post"
 					enctype="multipart/form-data">
-					<p>
+					<br><p>
 						<label>Image file:</label><input type="file" name="file" />
 					</p>
-					<input type='submit' name='enviar' value='Enviar' />
+					<input type='submit' name='enviar' value='Guardar' />
 				</form>
-				
-				<h3>Imagenes</h3>
 			
 				{{#images}}
 				<p>
@@ -63,7 +61,7 @@
                                 <i class="material-icons">web</i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" value="www.URLdelConcepto.com">
+                        <input type="text" class="form-control" value="https://es.wikipedia.org/wiki/Seguridad_inform%C3%A1tica">
                     </div>
                 </div>
             </div>
@@ -96,7 +94,7 @@
                                     </td>
                                     <td>
                                         <input type="text" class="form-control"
-                                            value="Esto es un ejemplo de una respuesta">
+                                            value="Qué vulnerabilidades específicas presenta el protocolo IPv6 que no presentaba IPv4">
                                     </td>
                                     <td>
                                         <div class="form-check form-check-radio form-check-inline">
@@ -131,7 +129,7 @@
                                     </td>
                                     <td>
                                         <input type="text" class="form-control"
-                                            value="Esto es un ejemplo de una justificación">
+                                            value="Cómo se realiza un ataque de Man in the Middle">
                                     </td>
                                     <td>
                                         <div class="form-check form-check-radio form-check-inline">
@@ -197,7 +195,8 @@
                                         1
                                     </td>
                                     <td>
-                                        Esto es un ejemplo de una respuesta
+                                        Es posible realizar este secuestro "a ciegas". Es decir, sin poder espiar los números de
+secuencia de los paquetes TCP intercambiados en la sesión.
                                     </td>
                                     <td>
                                         <div class="form-check form-check-radio form-check-inline">
@@ -230,7 +229,8 @@
                                         2
                                     </td>
                                     <td>
-                                        Esto es un ejemplo de una respuesta
+                                        Cómo consigue un atacante amplificar el volumen del ataque, qué alternativas tiene hoy
+en día
                                     </td>
                                     <td>
                                         <div class="form-check form-check-radio form-check-inline">

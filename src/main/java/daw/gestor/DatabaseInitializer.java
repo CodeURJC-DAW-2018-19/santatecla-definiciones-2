@@ -25,20 +25,29 @@ public class DatabaseInitializer {
 	public void init() {
 		
 		// Sample units
-		Unit u1 = new Unit("Unidad 1");
-		Unit u2 = new Unit("Unidad 2");
+		Unit u1 = new Unit("Introducción");
+		Unit u2 = new Unit("Ataques y Contramedidas");
 		unitRepository.save(u1);
 		unitRepository.save(u2);
 
 		//Sample concepts
-		Concept c1 = new Concept("Concepto 1");
-		Concept c2 = new Concept("Concepto 2");
+		Concept c1 = new Concept("Plan Director de Seguridad");
+		Concept c2 = new Concept("ARP Poisoning");
+		Concept c3 = new Concept("TCP/UDP");
+		Concept c4 = new Concept("Fichero Malicioso");
+		Concept c5 = new Concept("Ataque Hacker");
 		
 		c1.SetUnit(u1);
 		c2.SetUnit(u2);
+		c3.SetUnit(u1);
+		c4.SetUnit(u1);
+		c5.SetUnit(u2);
 		
 		conceptRepository.save(c1);
 		conceptRepository.save(c2);
+		conceptRepository.save(c3);
+		conceptRepository.save(c4);
+		conceptRepository.save(c5);
 		
 		
 	
