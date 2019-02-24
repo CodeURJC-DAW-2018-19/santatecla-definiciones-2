@@ -1,4 +1,4 @@
-package daw.gestor.concept;
+package daw.gestor.services;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

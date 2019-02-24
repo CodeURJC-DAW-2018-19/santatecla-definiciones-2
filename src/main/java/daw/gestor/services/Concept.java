@@ -1,4 +1,4 @@
-package daw.gestor.concept;
+package daw.gestor.services;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,6 +37,5 @@ public class Concept {
 		this.unit = uE;
 		
 	}
-
 
 }

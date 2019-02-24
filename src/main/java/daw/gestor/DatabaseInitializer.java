@@ -5,7 +5,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import daw.gestor.concept.*;
+import daw.gestor.services.*;
 import daw.gestor.users.User;
 import daw.gestor.users.UserRepository;
 

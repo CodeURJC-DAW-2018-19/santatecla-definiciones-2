@@ -1,13 +1,41 @@
 {{>header}}
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">
+        <img src="/img/Concepto.png" style="width:300px"></img>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+        </ul>
+      </div>
+    </div>
+  </nav>
 <div class="content">
   <div class="container-fluid">
     {{#concept}}
 
     <div class="card">
-      <div class="card-header">
-        <h5>
-          Concepto: "{{concept.title}}"
-        </h5>
+      <div class="card-header card-header-primary">
+          <h4 class="card-title ">
+              "{{concept.title}}" Imagenes
+          </h4>
+      </div>
+      <div class="card-body">
+	    <h3>Images</h3>
+	
+		{{#images}}
+		<p>
+			<img src='/image/{{id}}' />
+		</p>
+		{{/images}}
       </div>
       <div id="collapseOne" class="collapse show" data-parent="#accordion">
       </div>

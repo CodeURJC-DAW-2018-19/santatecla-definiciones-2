@@ -1,4 +1,4 @@
-package daw.gestor.concept;
+package daw.gestor.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,22 +9,21 @@ import org.springframework.stereotype.Service;
 /* This service will be used to include features to controller(s)
  */
 @Service
-public class ConceptService {
+public class UnitService {
 
 	@Autowired
-	private ConceptRepository repository;
+	private UnitRepository repository;
 
-	public Optional<Concept> findOne(long id) {
+	public Optional<Unit> findOne(long id) {
 		return repository.findById(id);
 	}
 
-	public List<Concept> findAll() {
+	public List<Unit> findAll() {
 		return repository.findAll();
 	}
 
-	public void save(Concept  concept, Unit unit) {
-		concept.SetUnit(unit);
-		repository.save(concept);
+	public void save(Unit  unit) {
+		repository.save(unit);
 	}
 
 	public void delete(long id) {
