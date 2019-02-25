@@ -35,6 +35,7 @@
 ![alt text](https://i.imgur.com/YGwIFBn.png)
 
 
+
 <h2 id="Instalation">Instalation and Execution</h2>
 <p>
 In order to start and run our web application, we must install Spring Tools Suite to be able to program the application. When we create a new Spring project, we must activate the Web, Mustache, JPA and MySQL, and Security dependencies. We can also activate the devtools to update our project instantly.
