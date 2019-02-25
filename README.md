@@ -32,7 +32,7 @@
 
 
 <h2 id="navegation diagram">Navegation Diagramm</h2>
-![alt text](https://i.imgur.com/YGwIFBn.png)
+![Imgur](https://i.imgur.com/hf74ZbK.png)
 
 
 
@@ -45,5 +45,5 @@ All this would not be possible without downloading a Server to host our website 
 
 
 <h2> Templates and Class Diagramm </h2>
-![alt text](https://i.imgur.com/p2iUfzf.png)
+![Imgur](https://i.imgur.com/iSxT9gG.png)
 
