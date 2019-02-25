@@ -16,21 +16,33 @@
 
 <h3 id="screenshots">Screenshots:</h3>
 
-![alt text](https://i.imgur.com/8CXSSNr.png)
-<p>This is the landing page, where you can see all the topics and their respective concepts.
+![alt text](https://i.imgur.com/YoeugKh.png)
+<p>This is the new landing page, where you can see all the topics and their respective concepts.
     You can also search for a concept in the search bar.</p>
+    
+![alt text](https://i.imgur.com/caUR1LY.png)
+<p>This is the landing page (admin view), where you can delete units and concepts. You can add concepts too.</p>
+    
+    
+![alt text](https://i.imgur.com/ExhpeRm.jpg)
+<p>This is a concept page viewed (admin view) from the student perspective. You can put an image to every concept</p>
 
-![alt text](https://i.imgur.com/uoRa1ON.png)
-<p>This is a concept page viewed from the student perspective, where you can see all the corrected questions and the ones which are not corrected yet.</p>
+
+<h1 id="Fase 2">Phase 2:</h1>
 
 
-<h1 id="documnent">Fase 2:</h1>
+<h2 id="navegation diagram">Navegation Diagramm</h2>
+![alt text](https://i.imgur.com/YGwIFBn.png)
 
-![alt text](https://i.imgur.com/1Ldsgzh.png)
 
+<h2 id="Instalation">Instalation and Execution</h2>
 <p>
 In order to start and run our web application, we must install Spring Tools Suite to be able to program the application. When we create a new Spring project, we must activate the Web, Mustache, JPA and MySQL, and Security dependencies. We can also activate the devtools to update our project instantly.
 
 All this would not be possible without downloading a Server to host our website and the database. To do this, we have downloaded MySQL Server and MySQL Workbench (visual tool for design and administration of databases).
 </p>
+
+
+<h2> Templates and Class Diagramm </h2>
+![alt text](https://i.imgur.com/p2iUfzf.png)
 
