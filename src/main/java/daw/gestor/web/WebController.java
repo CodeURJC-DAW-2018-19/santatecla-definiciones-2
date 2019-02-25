@@ -135,6 +135,23 @@ public class WebController {
 		return "loginerror";
 	}
 	
+	@GetMapping("/register")
+	public String register(Model model) {
+		//clave1 = src.password.value;
+		//clave2 = confirmpassword.value; 
+		//if (clave1 == clave2) { 
+		//	return "register"; }
+		//else { 
+		//	return "error";}
+		return "register";
+	}
+	
+	@GetMapping("/userCreated")
+	public String userCreated(Model model) {
+	
+		return "userCreated";
+	}
+	
 	
 	@GetMapping("/error")
 	public String Error() {
