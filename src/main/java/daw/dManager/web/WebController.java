@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import daw.dManager.services.*;
 import daw.dManager.users.UserComponent;
@@ -109,8 +111,9 @@ public class WebController {
 	}
 	
 	@PostMapping("/saveConcept")
-	public String saveConcept(Model model, Concept concept, Unit unit) {
-		
+	public String saveConcept(Model model, String title, String unit_title) {
+		Unit unit = unitService.findByTitle(unit_title);
+		Concept concept = new Concept(title);
 		service.save(concept, unit);
 		
 		return "conceptCreated";
@@ -177,11 +180,10 @@ public class WebController {
 		return "conceptForm";
 	} 
 	
-	@PostMapping("/saveUnit")
-	public String saveUnit(Model model, Unit unit) {
-		
+	@RequestMapping("/saveUnit")
+	public String saveUnit(Model model,@RequestParam String title) {
+		Unit unit = new Unit(title);
 		unitService.save(unit);
-		
 		return "unitCreated";
 	}
 	
@@ -224,7 +226,7 @@ public class WebController {
 		}
 	}
 
-	// NOTE: The url format "/image/{fileName:.+}" avoid Spring MVC remove file
+	// NOTE: The format "/image/{fileName:.+}" avoid Spring MVC remove file
 	// extension.
 
 	@RequestMapping("/image/{id}")

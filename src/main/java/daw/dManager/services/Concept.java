@@ -20,9 +20,9 @@ public class Concept {
 	
 	public Concept() {}
 
-	public Concept(String nombre) {
+	public Concept(String title) {
 		super();
-		this.title = nombre;
+		this.title = title;
 	}
 
 	public String getTitle() {

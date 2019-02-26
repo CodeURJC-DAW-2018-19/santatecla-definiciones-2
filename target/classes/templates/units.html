@@ -66,8 +66,8 @@
               <table class="table">
                 <tbody>
                   {{#admin}}
-                  <button class="btn btn-danger" type="button">
-                    <i class="material-icons">delete_forever</i>ELIMINAR TEMA</button>
+                  <a class="btn btn-danger" href="/deleteUnit/{{id}}" role="button">
+                    <i class="material-icons">delete_forever</i>ELIMINAR TEMA</a>
                   {{/admin}}
 
                   {{#concepts}}
@@ -131,8 +131,17 @@
                               <div class="form-group">
                                 {{#concept}}<input type="hidden" name="id" value="{{id}}" class="form-control" />{{/concept}}
                                 <label for="title">Concepto</label></br>
-                                <input type="text" id="title" name="title" {{#concept}}value="{{title}}" {{/concept}}
+                                <input type="text" id="title" name="title" {{#concept}}value="{{title}}"{{/concept}}
                                   class="form-control" />
+                                  <div class="input-group mb-3">
+  									<div class="input-group-prepend">
+    									<label class="input-group-text" for="inputGroupSelect01">Options</label>
+		  							</div>
+						 			 {{#units}}
+									    <input type="radio" id="unit_title" name="unit_title" {{#concept}}value="{{unit_title}}"{{/concept}} class="form-control">{{title}}<br>
+									 {{/units}}
+									  </select>
+									</div>
                               </div>
                               <div class="form-group">
                               <button type="submit" class="btn btn-primary">Guardar</button>

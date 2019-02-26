@@ -18,6 +18,10 @@ public class UnitService {
 		return repository.findById(id);
 	}
 
+	public Unit findByTitle(String unit_title) {
+		return repository.findByTitle(unit_title);
+	}
+	
 	public List<Unit> findAll() {
 		return repository.findAll();
 	}
