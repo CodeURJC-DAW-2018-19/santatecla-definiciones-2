@@ -3,12 +3,18 @@ package daw.dManager.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 //import org.hibernate.annotations.CascadeType;
 
@@ -18,7 +24,10 @@ public class Unit {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private long id;
-	
+	//@OneToMany(cascade=CascadeType.ALL) 
+	//@LazyCollection(LazyCollectionOption.FALSE)//cannot uses fetch type eager
+	//@JoinColumn(name="concept_id")
+	//@OnDelete(action=OnDeleteAction.CASCADE)
 	
 	String title;
 	
@@ -29,6 +38,14 @@ public class Unit {
 	
 	public Unit(String title) {
 		super();
+		this.title = title;
+	}
+	
+	public String getUnitTitle() {
+		return title;
+	}
+
+	public void setUnitTitle(String title) {
 		this.title = title;
 	}
 	
@@ -44,6 +61,9 @@ public class Unit {
 		return concepts;
 	}
 	
+	public void setConcepts(List<Concept> concepts) {
+		this.concepts = concepts;
+	}
 
 	@Override
 	public String toString() {
