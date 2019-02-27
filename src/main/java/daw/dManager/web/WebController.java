@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -74,7 +75,7 @@ public class WebController {
 	public String showConcepts(Model model) {
 
 		model.addAttribute("units", unitService.findAll());
-		model.addAttribute("concepts", service.findAll());
+		model.addAttribute("concepts", service.findAll(PageRequest.of(1, 2)));	//*Not working
 	
 		return "units";
 	}
