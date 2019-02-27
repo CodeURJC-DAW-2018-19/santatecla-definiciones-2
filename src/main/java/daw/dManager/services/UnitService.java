@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 /* This service will be used to include features to controller(s)
@@ -17,10 +18,6 @@ public class UnitService {
 	public Optional<Unit> findOne(long id) {
 		return repository.findById(id);
 	}
-
-	public Unit findByTitle(String unit_title) {
-		return repository.findByTitle(unit_title);
-	}
 	
 	public List<Unit> findAll() {
 		return repository.findAll();
@@ -33,4 +30,5 @@ public class UnitService {
 	public void delete(long id) {
 		repository.deleteById(id);
 	}
+
 }

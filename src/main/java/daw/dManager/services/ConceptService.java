@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /* This service will be used to include features to controller(s)
@@ -19,8 +18,8 @@ public class ConceptService {
 		return repository.findById(id);
 	}
 
-	public List<Concept> findAll(Pageable pageable) {
-		return repository.findAll(pageable).getContent(); 
+	public List<Concept> findAll() {
+		return repository.findAll(); 
 	}
 
 	public void save(Concept  concept, Unit unit) {

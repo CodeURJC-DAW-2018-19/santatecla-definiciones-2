@@ -75,7 +75,7 @@ public class WebController {
 	public String showConcepts(Model model) {
 
 		model.addAttribute("units", unitService.findAll());
-		model.addAttribute("concepts", service.findAll(PageRequest.of(1, 2)));	//*Not working
+		model.addAttribute("concepts", service.findAll());	//*Not working
 	
 		return "units";
 	}
@@ -111,11 +111,11 @@ public class WebController {
 		return "conceptForm";
 	}
 	
-	@PostMapping("/saveConcept")
-	public String saveConcept(Model model, String title, String unit_title) {
-		Unit unit = unitService.findByTitle(unit_title);
+	@PostMapping("/saveConcept/{id}")
+	public String saveConcept(Model model, String title, @PathVariable long id) {
+		Optional<Unit> unit = unitService.findOne(id);
 		Concept concept = new Concept(title);
-		service.save(concept, unit);
+		service.save(concept, unit.get());
 		
 		return "conceptCreated";
 	}

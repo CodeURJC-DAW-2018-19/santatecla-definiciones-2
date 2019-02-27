@@ -1,5 +1,7 @@
 package daw.dManager.services;
 
+import java.util.Optional;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,8 +35,8 @@ public class Concept {
 		this.title = title;
 	}
 
-	public void SetUnit(Unit uE) {
-		this.unit = uE;
+	public void SetUnit(Unit unit2) {
+		this.unit = unit2;
 		
 	}
 
