@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import daw.dManager.services.*;
+import daw.dManager.users.Student;
 import daw.dManager.users.User;
 import daw.dManager.users.UserRepository;
 
@@ -53,7 +54,7 @@ public class DatabaseInitializer {
 	
 		// Sample users
 
-		userRepository.save(new User("user", "pass", "ROLE_USER"));
+		userRepository.save(new Student("user", "pass"));
 		userRepository.save(new User("user2", "pass", "ROLE_USER"));
 		userRepository.save(new User("admin", "pass", "ROLE_USER", "ROLE_ADMIN"));
 	}

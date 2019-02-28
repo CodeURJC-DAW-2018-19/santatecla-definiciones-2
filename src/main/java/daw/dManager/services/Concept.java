@@ -1,12 +1,13 @@
 package daw.dManager.services;
 
-import java.util.Optional;
-
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Concept {
@@ -17,6 +18,9 @@ public class Concept {
 	
 	@ManyToOne
 	private Unit unit;
+	
+	@OneToMany
+	private List<Answer> answers = new ArrayList<Answer>();
 	
 	private String title;
 	

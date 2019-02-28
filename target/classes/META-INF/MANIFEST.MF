@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
+Built-By: rod
+Build-Jdk: 11.0.1
 Implementation-Title: practica_fase4
 Implementation-Version: 0.1.0
-Built-By: Daniel
 Implementation-Vendor-Id: es.urjc.code
-Build-Jdk: 1.8.0_151
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/practica_fase4
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/practica_fase4
 Created-By: Maven Integration for Eclipse
 

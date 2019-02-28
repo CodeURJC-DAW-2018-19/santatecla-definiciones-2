@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import daw.dManager.users.Student;
+
 
 @Entity
 public class Answer {
@@ -26,6 +28,9 @@ public class Answer {
 	
 	@ManyToOne
 	private Concept concept;
+	
+	@ManyToOne
+	private Student student;
 	
 	public Answer() {}
 	
