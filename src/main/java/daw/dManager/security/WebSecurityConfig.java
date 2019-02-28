@@ -28,6 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/editConcept").hasAnyRole("ADMIN");
         http.authorizeRequests().antMatchers("/editConcept/**").hasAnyRole("ADMIN");
         http.authorizeRequests().antMatchers("/deleteConcept/**").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/image/upload").hasAnyRole("ADMIN");
+        
 
         // Login form
         http.formLogin().loginPage("/login");
@@ -40,6 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // Logout
         http.logout().logoutUrl("/logout");
         http.logout().logoutSuccessUrl("/");
+        
     }
 
     @Override

@@ -197,7 +197,7 @@ public class WebController {
 	}
 	
 	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
-	public String handleFileUpload(Model model, @RequestParam("imageTitle") String imageTitle,
+	public String handleFileUpload(Model model,
 			@RequestParam("file") MultipartFile file) {
 
 		int id = imageId.getAndIncrement();
@@ -210,7 +210,7 @@ public class WebController {
 				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
 				file.transferTo(uploadedFile);
 
-				images.put(id, new Image(id, imageTitle));
+				images.put(id, new Image(id, null));
 
 				return "uploaded";
 
