@@ -31,7 +31,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 import daw.dManager.services.*;
-import daw.dManager.users.User;
 import daw.dManager.users.UserComponent;
 
 @Controller
@@ -142,15 +141,18 @@ public class WebController {
 	
 	@GetMapping("/register")
 	public String register(Model model) {
+		//clave1 = src.password.value;
+		//clave2 = confirmpassword.value; 
+		//if (clave1 == clave2) { 
+		//	return "register"; }
+		//else { 
+		//	return "error";}
 		return "register";
 	}
 	
-	@RequestMapping("/userCreated")
-	public String createUser(Model model, @RequestParam String name, @RequestParam String pass ) {
-		
-		User user = new User(name, pass);
-		userComponent.setLoggedUser(user);
-		
+	@GetMapping("/userCreated")
+	public String userCreated(Model model) {
+	
 		return "userCreated";
 	}
 	
@@ -193,8 +195,6 @@ public class WebController {
 		
 		return "unitDeleted";
 	}
-	
-	
 	
 	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
 	public String handleFileUpload(Model model,
