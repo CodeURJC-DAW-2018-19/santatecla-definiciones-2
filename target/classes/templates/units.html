@@ -105,7 +105,9 @@
                   </div>
                   {{/logged}}
                   {{/concepts}}
-
+				  {{#showNext}}
+                  <a class="btn btn-primary" role="button" href="/?page={{nextPage}}"> Cargar Mas</a>
+                  {{/showNext}}	
                   {{#admin}}
                   <!-- Button trigger modal -->
                   <button class="btn btn-success" type="button" data-toggle="modal" data-target="#newConcept{{id}}">

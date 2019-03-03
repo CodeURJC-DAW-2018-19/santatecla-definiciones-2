@@ -1,4 +1,4 @@
-package daw.dManager.web;
+package daw.dManager.controllers;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,11 +12,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -72,13 +73,17 @@ public class WebController {
 
 	
 	@GetMapping("/")
-	public String showConcepts(Model model) {
-
+	public String showConcepts(Model model, @PageableDefault(size=1) Pageable page) {
+		Page<Concept> concepts = service.findAll(page);
+		
 		model.addAttribute("units", unitService.findAll());
-		model.addAttribute("concepts", service.findAll());	//*Not working
-	
+		model.addAttribute("concepts", concepts);
+		
+		model.addAttribute("showNext", !concepts.isLast());
+		model.addAttribute("nextPage", concepts.getNumber()+1);
 		return "units";
 	}
+	
 	
 	@GetMapping("/concept/{id}")
 	public String showBook(Model model, @PathVariable long id) {

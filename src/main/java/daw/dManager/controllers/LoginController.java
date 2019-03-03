@@ -1,4 +1,4 @@
-package daw.dManager.security;
+package daw.dManager.controllers;
 
 import javax.servlet.http.HttpSession;
 

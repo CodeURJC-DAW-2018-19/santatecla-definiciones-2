@@ -39,5 +39,9 @@ public class Concept {
 		this.unit = unit2;
 		
 	}
+	
+	public Unit getUnit() {
+		return unit;
+	}
 
 }
