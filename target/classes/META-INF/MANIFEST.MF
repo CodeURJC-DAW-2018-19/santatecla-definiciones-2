@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Built-By: Borja
-Build-Jdk: 11.0.2
+Built-By: adriangomezdejuan
+Build-Jdk: 11.0.1
 Implementation-Title: practica_fase4
 Implementation-Version: 0.1.0
 Implementation-Vendor-Id: es.urjc.code
