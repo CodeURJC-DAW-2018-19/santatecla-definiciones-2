@@ -10,24 +10,27 @@
           <div class="fadeIn first">
             <img src="/img/login_user.png" id="icon" alt="User Icon" />
           </div>
+                  <form action="/userCreated" method="post">
+                    <div class="form-group">
+                   
+                      <input type="text" id="title" name="name" placeholder="user" 
+                        class="form-control" />
+                        <input type="text" id="title" name="pass" placeholder="pass"
+                        class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <input type="hidden" name="_csrf" value="{{token}}" />
+                  </form>
 
-          <!-- Register Form -->
-          <form action="/login" method="post">
-            <input type="text" id="username" class="fadeIn second" name="username" placeholder="email">
-            <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
-            <input type="password" id="password" class="fadeIn third" name="confirmpassword" placeholder="Confirm Password">
-            
-          </form>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                
+          
 
-          <!-- Remind Passowrd -->
-          <div id="formFooter">
-            <a class="underlineHover" href="/userCreated">Enviar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+         
+        
 
 {{>footer}}
