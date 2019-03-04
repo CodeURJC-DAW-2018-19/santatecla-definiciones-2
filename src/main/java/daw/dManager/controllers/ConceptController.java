@@ -15,14 +15,10 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,24 +26,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-
-import daw.dManager.services.*;
-import daw.dManager.users.User;
-import daw.dManager.users.UserComponent;
+import daw.dManager.services.Concept;
+import daw.dManager.services.ConceptService;
+import daw.dManager.services.Image;
+import daw.dManager.services.Unit;
+import daw.dManager.services.UnitService;
 
 @Controller
-public class WebController {
-
-	@Autowired
-	private ConceptService service;
+public class ConceptController {
 	
 	@Autowired
 	private UnitService unitService;
 	
 	@Autowired
-	private UserComponent userComponent;
+	private ConceptService service;
 	
-
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "images");
 
 	private AtomicInteger imageId = new AtomicInteger();
@@ -60,30 +53,8 @@ public class WebController {
 			Files.createDirectories(FILES_FOLDER);
 		}
 	}
-
-	@ModelAttribute
-	public void addUserToModel(Model model) {
-		boolean logged = userComponent.getLoggedUser() != null;
-		model.addAttribute("logged", logged);
-		if(logged) {
-			model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
-			model.addAttribute("userName",userComponent.getLoggedUser().getName());
-		}
-	}
 	
-
 	
-	@GetMapping("/")
-	public String showConcepts(Model model, @PageableDefault(size=1) Pageable page) {
-		Page<Concept> concepts = service.findAll(page);
-		
-		model.addAttribute("units", unitService.findAll());
-		model.addAttribute("concepts", concepts);
-		
-		model.addAttribute("showNext", !concepts.isLast());
-		model.addAttribute("nextPage", concepts.getNumber()+1);
-		return "units";
-	}
 	
 	
 	@GetMapping("/concept/{id}")
@@ -132,72 +103,6 @@ public class WebController {
 		service.delete(id);
 		
 		return "conceptDeleted";
-	}
-	
-	@GetMapping("/login")
-	public String login(Model model) {
-		model.addAttribute("hideLogin", true);
-		return "login";
-	}
-	
-	@GetMapping("/loginerror")
-	public String loginError() {
-		return "loginerror";
-	}
-	
-	@GetMapping("/register")
-	public String register(Model model) {
-		
-		return "register";
-	}
-	
-	@RequestMapping("/userCreated")
-	public String createUser(Model model, @RequestParam String name, @RequestParam String pass ) {
-		
-		User user = new User(name, pass);
-		userComponent.setLoggedUser(user);
-		
-		return "userCreated";
-	}
-	
-	
-	@GetMapping("/error")
-	public String Error() {
-		return "error";
-		
-	}
-	
-	
-	@GetMapping("/newUnit")
-	public String newUnit(Model model) {
-		return "unitForm";
-	}
-	
-	@GetMapping("/editUnit/{id}")
-	public String newUnit(Model model, @PathVariable long id) {
-		
-		Optional<Unit> unit = unitService.findOne(id);
-		
-		if(unit.isPresent()) {
-			model.addAttribute("concept", unit.get());
-		}
-		
-		return "conceptForm";
-	} 
-	
-	@RequestMapping("/saveUnit")
-	public String saveUnit(Model model,@RequestParam String title) {
-		Unit unit = new Unit(title);
-		unitService.save(unit);
-		return "unitCreated";
-	}
-	
-	@GetMapping("/deleteUnit/{id}")
-	public String deleteUnit(Model model, @PathVariable long id) {
-		
-		unitService.delete(id);
-		
-		return "unitDeleted";
 	}
 	
 	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
@@ -252,5 +157,5 @@ public class WebController {
 			res.sendError(404, "File" + fileName + "(" + image.toAbsolutePath() + ") does not exist");
 		}
 	}
-	
+
 }
