@@ -39,13 +39,21 @@
 
 <h2 id="Instalation">Instalation and Execution</h2>
 <p>
-In order to start and run our web application, we must install Spring Tools Suite to be able to program the application. When we create a new Spring project, we must activate the Web, Mustache, JPA and MySQL, and Security dependencies. We can also activate the devtools to update our project instantly.
+In order to start and run our web application, we must install Spring Tools Suite to be able to program the application and open it with Maven. 
 
 All this would not be possible without downloading a Server to host our website and the database. To do this, we have downloaded MySQL Server and MySQL Workbench (visual tool for design and administration of databases).
+
+
+When we have all this, we must connect our server through: https://localhost:8443/
 </p>
 
 
 <h2> Templates and Class Diagramm </h2>
 
 ![alt text](https://i.imgur.com/iSxT9gG.png)
+
+
+<h2> Database Entities Diagramm </h2>
+
+![alt text](https://i.imgur.com/QqwB9U9.png)
 
