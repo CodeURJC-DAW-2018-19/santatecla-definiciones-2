@@ -37,4 +37,7 @@ public class ConceptService {
         return repository.findAll(pageable);
     }
     
+    public Optional<Concept> findOneByTitle(String title) {
+		return repository.findOneByTitle(title);
+	}
 }

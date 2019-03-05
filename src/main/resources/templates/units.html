@@ -56,9 +56,9 @@
           </div>
 
         </div>
-
+		
         <div class="card-body">
-
+			
           <div class="tab-content">
             {{#units}}
             <div class="tab-pane" id="{{id}}">
@@ -70,45 +70,48 @@
                     <i class="material-icons">delete_forever</i>ELIMINAR TEMA</a>
                   {{/admin}}
 
-                  {{#concepts}}
-
-                  {{#logged}}
-                  <div class="card">
-                    <div class="card-header">
-                      <a class="card-link" data-toggle="collapse" href="#">
-                        {{^admin}}
-                        <a href="/concept/{{id}}">{{title}}</a>
-                        {{/admin}}
-                        {{#admin}}
-                        <a href="/editConcept/{{id}}">{{title}}</a>
-                        {{/admin}}
-                      </a>
-                      {{#admin}}
-                      <a style="float:right;" href="/deleteConcept/{{id}}" class="btn btn-primary" role="button">
-                        <i class="material-icons">delete_forever</i></a>
-                      {{/admin}}
-                    </div>
-                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                    </div>
+				  <div id="moreConcepts">
+	                  {{#concepts}}
+	
+	                  {{#logged}}
+	                  <div class="card">
+	                    <div class="card-header">
+	                      <a class="card-link" data-toggle="collapse" href="#">
+	                        {{^admin}}
+	                        <a href="/concept/{{id}}">{{title}}</a>
+	                        {{/admin}}
+	                        {{#admin}}
+	                        <a href="/editConcept/{{id}}">{{title}}</a>
+	                        {{/admin}}
+	                      </a>
+	                      {{#admin}}
+	                      <a style="float:right;" href="/deleteConcept/{{id}}" class="btn btn-primary" role="button">
+	                        <i class="material-icons">delete_forever</i></a>
+	                      {{/admin}}
+	                    </div>
+	                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+	                    </div>
+	                  </div>
+	                  {{/logged}}
+	                  {{^logged}}
+	
+	                  <div class="card">
+	                    <div class="card-header">
+	                      <a class="card-link" data-toggle="collapse">
+	                        {{title}}
+	                      </a>
+	                    </div>
+	                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+	                    </div>
+	                  </div>
+	                  {{/logged}}
+	                  {{/concepts}}
                   </div>
-                  {{/logged}}
-                  {{^logged}}
+                  <button type="button" class="btn btn-primary" id="buttonMoreConcepts" onClick="loadMoreConcepts()">Cargar Mas</button>
 
-                  <div class="card">
-                    <div class="card-header">
-                      <a class="card-link" data-toggle="collapse">
-                        {{title}}
-                      </a>
-                    </div>
-                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                    </div>
-                  </div>
-                  {{/logged}}
-                  {{/concepts}}
-
-				  {{#showNext}}
+				  <!-- {{#showNext}}
                   <a class="btn btn-primary" role="button" href="/?page={{nextPage}}"> Cargar Mas</a>
-                  {{/showNext}}	
+                  {{/showNext}}	-->
                   {{#admin}}
                   <!-- Button trigger modal -->
                   <button class="btn btn-success" type="button" data-toggle="modal" data-target="#newConcept{{id}}">
