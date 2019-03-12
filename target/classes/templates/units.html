@@ -43,14 +43,24 @@
             <div class="nav-tabs-wrapper">
               <span class="nav-tabs-title"></span>
               <ul class="nav nav-tabs" data-tabs="tabs">
+              	<li class="nav-item">
+                  {{#showPreviousUnits}}
+                  <a class="btn btn-primary" role="button" href="/?page={{previousUnitPage}}">Volver</a>
+                  {{/showPreviousUnits}}	
+                </li>
                 {{#units}}
                 <li class="nav-item">
                   <a class="nav-link" href="#{{id}}" data-toggle="tab">
                     <i class="material-icons">bookmark</i> {{title}}
                     <div class="ripple-container"></div>
-                  </a>
+                  </a>               	
                 </li>
                 {{/units}}
+                <li class="nav-item">
+                	{{#showNextUnits}}
+                  <a class="btn btn-primary" role="button" href="/?page={{nextUnitPage}}">Más Temas</a>
+                  {{/showNextUnits}}	
+                </li>
               </ul>
             </div>
           </div>
@@ -69,6 +79,10 @@
                   <a class="btn btn-danger" href="/deleteUnit/{{id}}" role="button">
                     <i class="material-icons">delete_forever</i>ELIMINAR TEMA</a>
                   {{/admin}}
+                  
+                  {{#showPreviousConcepts}}
+                  <a class="btn btn-primary" role="button" href="/?page={{previousConceptPage}}">Volver</a>
+                  {{/showPreviousConcepts}}	
 
 				  <div id="moreConcepts">
 	                  {{#concepts}}
@@ -107,11 +121,17 @@
 	                  {{/logged}}
 	                  {{/concepts}}
                   </div>
+                  
+                  {{#showNextConcepts}}
+                  <a class="btn btn-primary" role="button" href="/?page={{currentUnitPage}}/">Más Conceptos</a>
+                  {{/showNextConcepts}}	
+
                   <button type="button" class="btn btn-primary" id="buttonMoreConcepts" onClick="loadMoreConcepts()">Cargar Mas</button>
 
-				  <!-- {{#showNext}}
+				   {{#showNext}}
                   <a class="btn btn-primary" role="button" href="/?page={{nextPage}}"> Cargar Mas</a>
-                  {{/showNext}}	-->
+                  {{/showNext}}
+                  
                   {{#admin}}
                   <!-- Button trigger modal -->
                   <button class="btn btn-success" type="button" data-toggle="modal" data-target="#newConcept{{id}}">

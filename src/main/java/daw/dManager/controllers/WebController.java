@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 //import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -75,12 +75,22 @@ public class WebController {
 
 	
 	@GetMapping("/")
-	public String showConcepts(Model model) {
-
-		model.addAttribute("units", unitService.findAll());
-		model.addAttribute("concepts",service.findAll(new PageRequest(0, 2)));
-
-
+	public String showConcepts(Model model, @PageableDefault(size=4) Pageable page) {
+		Page<Concept> concepts = service.findAll(page);
+		Page<Unit> units = unitService.findAll(page);
+		
+		model.addAttribute("units", unitService.findAll(page));
+		model.addAttribute("concepts", service.findAll(page));
+		
+		model.addAttribute("showNextUnits", !units.isLast());
+		model.addAttribute("showPreviousUnits", !units.isFirst());
+		model.addAttribute("showNextConcepts", !concepts.isLast());
+		model.addAttribute("showPreviousConcepts", !concepts.isFirst());
+		model.addAttribute("nextConceptPage", concepts.getNumber()+1);
+		model.addAttribute("previousConceptPage", concepts.getNumber()-1);
+		model.addAttribute("nextUnitPage", units.getNumber()+1);
+		model.addAttribute("previousUnitPage", units.getNumber()-1);
+		model.addAttribute("currentUnitPage", units.getNumber());
 		return "units";
 	}
 	
